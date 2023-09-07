@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 import questions.CircleArea;
 import questions.PesonnalInfos;
+import questions.TwoNumbers;
 
 class Main {
     public void question01() throws Exception {
@@ -49,10 +50,35 @@ class Main {
         infos.displayInfos();
     }
 
+    public void question03() throws Exception {
+        Scanner input = new Scanner(System.in);
+        float x, y;
+
+        try {
+            System.out.println(TwoNumbers.question);
+
+            System.out.print("Valor de X: ");
+            x = input.nextFloat();
+
+            System.out.print("Valor de Y: ");
+            y = input.nextFloat();
+
+            TwoNumbers question = new TwoNumbers(x, y);
+            System.out.println("Resultado: " + question.calculate());
+
+        } catch (Exception e) {
+            throw new Exception("Ocorreu um erro", e);
+        } finally {
+            input.close();
+        }
+    }
+
     public static void main(String[] args) throws Exception {
         Main main = new Main();
 
         // main.question01();
-        main.question02();
+        // main.question02();
+        main.question03();
+
     }
 }
